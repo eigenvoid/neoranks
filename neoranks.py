@@ -17,8 +17,9 @@ def ranksBySort(sortBy, tag, username):
     if tag == 'all':
         tagPhrase = ''
 
-    # Stops after first 100 pages of search results. User may wish to change this number
     page = 1
+    rank = 0
+    # Stops after first 100 pages of search results. User may wish to change this number
     while page <= 100:
 
         # Page number component of search URL
@@ -63,10 +64,17 @@ def ranksBySort(sortBy, tag, username):
                 if site == soup.find(id = re.compile(username)):
                     # Calculate rank, given that there are 100 sites per page
                     rank = position + ((page - 1) * 100)
-                    # Write rank for this tag and sorting method to ranks.txt
-                    with open('ranks.txt', 'a') as f:
-                        f.write('tag: ' + tag + ', sort by: ' + sortBy + ', rank: ' + str(rank) + '\n')
             break
+
+    if rank != 0:
+        rankStr = str(rank)
+    # If search ends before site is found, rank is unknown
+    else:
+        rankStr = '?'
+
+    # Write rank for this tag and sorting method to ranks.txt
+    with open('ranks.txt', 'a') as f:
+        f.write('tag: ' + tag + ', sort by: ' + sortBy + ', rank: ' + rankStr + '\n')
 
 # Site username, passed as command line argument
 username = sys.argv[1]

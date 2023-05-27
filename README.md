@@ -1,5 +1,5 @@
 # neoranks
-A program to calculate how a Neocities website ranks against other Neocities websites in search results.
+A program to calculate how a Neocities website ranks against other Neocities websites in [Neocities search results](https://neocities.org/browse).
 
 ## Installation
 [Beautiful Soup 4](https://beautiful-soup-4.readthedocs.io/en/latest/#installing-beautiful-soup) must be installed in order to run `neoranks.py`.

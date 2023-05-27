@@ -5,7 +5,13 @@ A program to calculate how a Neocities website ranks against other Neocities web
 [Beautiful Soup 4](https://beautiful-soup-4.readthedocs.io/en/latest/#installing-beautiful-soup) must be installed in order to run `neoranks.py`.
 
 ## Usage
-Run `python3 neoranks.py <username>` where `<username>` is the Neocities username of the site being ranked. To rank `https://example.neocities.org`, run `python3 neoranks.py example`.
+Run:
+
+```
+python3 neoranks.py <username>
+```
+
+where `<username>` is the Neocities username of the site being ranked. To rank `https://example.neocities.org`, run `python3 neoranks.py example`.
 
 The program will calculate ranks per sorting method per tag used by the site. Sorting methods include `followers`, `hits`, `last_updated`, `newest`, `oldest`, `special_sauce` and `views`. To remove a sorting method, one can alter the following line in `neoranks.py`:
 

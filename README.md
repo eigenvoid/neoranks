@@ -25,6 +25,6 @@ The program will analyse the first 100 pages of search results at most. One can 
 while page <= 100:
 ```
 
-The rank data is saved to the file `ranks.txt`.
+The rank data is saved to the file `ranks.txt`. If a search ends before the site is found in the results, the corresponding rank is recorded as unknown, represented by `?`.
 
 **Note:** If the site is ranked low in the search results for a certain tag and sorting method, the runtime of the program may be very long as it will fetch up to 100 pages of search results before moving on to the next search.

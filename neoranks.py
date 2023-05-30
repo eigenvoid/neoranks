@@ -97,6 +97,7 @@ print(tags)
 
 # Create ranks.txt, or overwrite it if it exists
 f = open('ranks.txt', 'w')
+f.write(username + "'s rankings:\n\n")
 f.close()
 
 # All the ways it may be useful to sort websites. User can remove some of these

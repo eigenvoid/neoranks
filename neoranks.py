@@ -72,8 +72,8 @@ def ranksBySort(sortBy, tag, username):
     else:
         rankStr = '?'
 
-    # Write rank for this tag and sorting method to ranks.txt
-    with open('ranks.txt', 'a') as f:
+    # Write rank for this tag and sorting method to rank file
+    with open(username + '_ranks.txt', 'a') as f:
         f.write('tag: ' + tag + ', sort by: ' + sortBy + ', rank: ' + rankStr + '\n')
 
 # Site username, passed as command line argument
@@ -95,19 +95,20 @@ tags.append('all')
 print(username + "'s tags:")
 print(tags)
 
-# Create ranks.txt, or overwrite it if it exists
-f = open('ranks.txt', 'w')
+# Create rank file, or overwrite it if it exists
+rankFile = username + '_ranks.txt'
+f = open(rankFile, 'w')
 f.write(username + "'s rankings:\n\n")
 f.close()
 
 # All the ways it may be useful to sort websites. User can remove some of these
 sorts = ['followers', 'hits', 'last_updated', 'newest', 'oldest', 'special_sauce', 'views']
 
-# For each tag, get ranks for each sorting method and write to ranks.txt
+# For each tag, get ranks for each sorting method and write to rank file
 for t in tags:
     print('\nSearching "' + t + '"...')
     for s in sorts:
         ranksBySort(s, t, username)
-    with open('ranks.txt', 'a') as f:
+    with open(rankFile, 'a') as f:
         f.write('\n')
 print('\nDone')
